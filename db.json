@@ -1,25 +1,25 @@
 {
   "logs": [
     {
+      "id": 1,
       "message": "Changed network card in server 007",
       "attention": false,
       "tech": "sara smith",
-      "date": "2022-03-23T09:51:29.892Z",
-      "id": 1
+      "date": "2022-03-23T11:38:26.634Z"
     },
     {
       "id": 2,
-      "message": "Hard drive fixed in workstation 006",
-      "attention": false,
-      "tech": "john doe",
-      "date": "2022-03-23T10:42:28.714Z"
+      "message": "Server 005 is down",
+      "attention": true,
+      "tech": "Sara Smith",
+      "date": "2022-03-23T11:50:52.138Z"
     },
     {
       "id": 3,
-      "message": "1122 wireless is down",
-      "attention": true,
+      "message": "1122 wireless is fixed",
+      "attention": false,
       "tech": "sam smith",
-      "date": "2022-03-23T10:42:39.107Z"
+      "date": "2022-03-23T11:50:03.818Z"
     }
   ],
   "techs": [

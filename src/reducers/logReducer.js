@@ -1,7 +1,7 @@
 import {
   GET_LOGS,
-  ADD_LOGS,
-  DELETE_LOGS,
+  ADD_LOG,
+  DELETE_LOG,
   SET_LOADING,
   LOGS_ERROR,
   SET_CURRENT,
@@ -32,14 +32,14 @@ const logReducer = (state = initialState, action) => {
         loading: false,
       };
 
-    case ADD_LOGS:
+    case ADD_LOG:
       return {
         ...state,
         logs: [...state.logs, action.payload],
         loading: false,
       };
 
-    case DELETE_LOGS:
+    case DELETE_LOG:
       return {
         ...state,
         logs: state.logs.filter((log) => log.id !== action.payload),
@@ -65,6 +65,7 @@ const logReducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload,
+        loading: false,
       };
 
     case SET_CURRENT:

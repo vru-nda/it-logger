@@ -1,8 +1,8 @@
 import {
   GET_LOGS,
-  ADD_LOGS,
+  ADD_LOG,
   SET_LOADING,
-  DELETE_LOGS,
+  DELETE_LOG,
   LOGS_ERROR,
   SET_CURRENT,
   CLEAR_CURRENT,
@@ -39,7 +39,7 @@ export const getLogs = () => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
 };
@@ -59,13 +59,13 @@ export const addLog = (log) => async (dispatch) => {
     const data = await res.json();
 
     dispatch({
-      type: ADD_LOGS,
+      type: ADD_LOG,
       payload: data,
     });
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
 };
@@ -90,7 +90,7 @@ export const updateLog = (log) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
 };
@@ -105,13 +105,13 @@ export const deleteLog = (id) => async (dispatch) => {
     });
 
     dispatch({
-      type: DELETE_LOGS,
+      type: DELETE_LOG,
       payload: id,
     });
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
 };
@@ -131,7 +131,7 @@ export const searchLogs = (text) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.data,
+      payload: err.response.statusText,
     });
   }
 };
